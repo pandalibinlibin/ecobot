@@ -4,9 +4,8 @@ WORKDIR /opt/vue-fastapi-admin
 COPY /web ./web
 RUN cd /opt/vue-fastapi-admin/web && \
     npm config set registry https://registry.npmjs.org && \
-    npm install --verbose || (cat /root/.npm/_logs/*-debug.log && exit 1) && \
+    npm install && \
     npm run build
-
 
 FROM python:3.11-slim-bullseye
 
