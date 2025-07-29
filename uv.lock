@@ -1,4 +1,5 @@
 version = 1
+revision = 1
 requires-python = ">=3.11"
 resolution-markers = [
     "sys_platform != 'win32'",
@@ -1021,7 +1022,7 @@ dependencies = [
     { name = "typing-extensions" },
     { name = "ujson" },
     { name = "uvicorn" },
-    { name = "uvloop" },
+    { name = "uvloop", marker = "sys_platform != 'win32'" },
     { name = "watchfiles" },
     { name = "websockets" },
 ]
@@ -1086,7 +1087,6 @@ requires-dist = [
     { name = "typing-extensions", specifier = "==4.12.2" },
     { name = "ujson", specifier = "==5.10.0" },
     { name = "uvicorn", specifier = "==0.34.0" },
-    { name = "uvloop", specifier = "==0.21.0" },
     { name = "uvloop", marker = "sys_platform != 'win32'", specifier = "==0.21.0" },
     { name = "watchfiles", specifier = "==1.0.4" },
     { name = "websockets", specifier = "==14.1" },
