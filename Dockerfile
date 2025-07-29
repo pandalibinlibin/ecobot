@@ -1,4 +1,4 @@
-FROM node:18.12.0-alpine3.16 AS web
+FROM node:20-alpine AS web
 
 WORKDIR /opt/vue-fastapi-admin
 COPY /web ./web
