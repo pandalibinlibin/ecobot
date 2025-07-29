@@ -8,7 +8,7 @@ RUN npm ci
 
 # 再拷源码并构建
 COPY web/ ./
-RUN npm run build          # 这一步会生成 dist 目录
+RUN npm run build 2>&1 | tee build.log || (cat build.log && exit 1)
 
 ########################  2. 运行环境  ########################
 FROM python:3.11-slim-bullseye
